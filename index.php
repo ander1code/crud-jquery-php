@@ -1,217 +1,280 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    <link rel="icon" href="imgs/jquery-icon.png">
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Sistema pequeno de Cadastro feito com jQuery, Material Design Lite (componente da Google). No lado do servidor, PHP e SQLite.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Registration jQuery</title>
-
-    <!-- Page styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
-    <link rel="stylesheet" href="css/mycss.css">
-
-    <script type="text/javascript" src="jquery-1.8.0.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-
-
-    <script>
-
-
-    </script>
-    
-
-</head>
-
-<body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Registration System</span>
-                <div class="mdl-layout-spacer"></div>
-                <br>
-                <br>
-                <br>
-                <nav class="mdl-navigation ocultar_celular">
-                    <a href="#home" class="mdl-navigation__link">Home</a>
-                    <a href="#cadastro" class="mdl-navigation__link">Registration</a>
-                    <a href="#busca" class="mdl-navigation__link">Search</a>
-                    <a href="#login" class="mdl-navigation__link">Login</a>
-                </nav>
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="footable/footable.core.css">
+      <link rel="stylesheet" href="footable/footable.metro.css">
+      <link rel="stylesheet" href="datepicker/css/bootstrap-datepicker.min.css">
+      <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+      <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="footable/footable.js"></script>
+      <script type="text/javascript" src="footable/footable.paginate.js"></script>
+      <script type="text/javascript" src="datepicker/js/bootstrap-datepicker.js"></script>
+      <script src="datepicker/locales/bootstrap-datepicker.pt-BR.min.js" type="text/javascript" charset="utf-8" async defer></script>
+      <link href="css/crud-css.css" rel="stylesheet" />
+      <title>Registration jQuery</title>
+   </head>
+   <body>
+      <nav class="navbar navbar-inverse" role="navigation">
+         <div class="container">
+            <div class="navbar-header">
+               <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button> 
+               <a class="navbar-brand" href="#">CrudJQuery</a>
             </div>
-        </header>
-        <div class="mdl-layout__drawer mostrar_celular">
-            <span class="mdl-layout-title">Menu</span>
-            <nav class="mdl-navigation">
-                <a href="#home" class="mdl-navigation__link">Home</a>
-                <a href="#cadastro" class="mdl-navigation__link">Registration</a>
-                <a href="#busca" class="mdl-navigation__link">Search</a>
-                <a href="#login" class="mdl-navigation__link">Login</a>
-            </nav>
-        </div>
-
-        <div id="token" style="display:none;"></div>
-
-        <div class="mdl-layout__content">
-
-            <main>
-                <div id="cadastro">
-                    <div class="mdl-grid" style="text-align:center;">
-                        <div class="mdl-cell mdl-cell--12-col">
-
-                            <h6>Registration System</h6>
-                            
-                            <input type="hidden" id="codigoEdicao">
-
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="nome" style="color:black;" required>
-                                <label class="mdl-textfield__label" for="nome">Name:</label>
-                            </div>
-                            
-                            <br>
-                            
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <label class="mdl-textfield__label" for="email">E-mail:</label>
-                                <input class="mdl-textfield__input" type="text" id="email" style="color:black;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-                                <span class="mdl-textfield__error">Invalid E-mail.</span>
-                            </div>
-                          
-                            <br>
-
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <label class="mdl-textfield__label" for="renda">Salary:</label>
-                                <input class="mdl-textfield__input" type="number" id="renda" style="color:black;" pattern="[0-9]" required>
-                                <br>
-                                <br>
-                            </div>
-                            <br>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <label class="mdl-textfield__label" for="dataNasc">Data of Birth:</label>
-                                <input class="mdl-textfield__input" type="date" id="dataNasc" required style="color:black;">
-                                <br>
-                                <br>
-                            </div>
-                            <br>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <label class="mdl-textfield__label" for="sexo">Genre:</label>
-                                <select class="mdl-textfield__input" required value="" id="sexo" required>
-                                    <option value="M">Male</option>
-                                    <option value="F">Female</option>
-                                </select>
-                                <br>
-                                <br>
-                            </div>
-                            <br>
-                            <button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised mdl-js-ripple-effect botao_celular botao_desktop" id="btnDel">Delete</button>
-                            <button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised mdl-js-ripple-effect botao_celular botao_desktop" id="btnClr">Clear</button>
-                            <button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised mdl-js-ripple-effect botao_celular botao_desktop" id="btnEdt">Edit</button>
-                            <button class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised mdl-js-ripple-effect botao_celular botao_desktop" id="btnIst">Insert</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div id="home">
-
-                    <div class="mdl-grid" style="text-align:center;">
-                        <div class="mdl-cell mdl-cell--12-col" style="text-align:left;">
-                            <h1>Home</h1>
-                            <h4>Registration System</h4>
-                            <p>This system aims to show the example of jQuery technologies together with PHP and SQLite.</p>
-                            <p style="font-size:18px;">
-                                jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document <br>
-								traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use <br>
-								API that works across a multitude of browsers. With a combination of versatility and extensibility, <br>
-								jQuery has changed the way that millions of people write JavaScript.<br>
-                            </p>
-                            <img src="imgs/JQuery_logo.svg" class="logoAngular">
-                            <br>
-                            <img src="imgs/php.png" class="logo">
-                            <img src="imgs/sqlite-logo.png" class="logo">
-                        </div>
-                    </div>
-                </div>
-
-                <div id="login">
-                    <div class="mdl-grid" style="text-align:center;">
-                        <div class="mdl-cell mdl-cell--12-col">
-                            <h6>Login</h6>
-
-                            <div id="divfrmlogin">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <label class="mdl-textfield__label" for="usuario">User:</label>
-                                    <input class="mdl-textfield__input" id="usuario" type="text" style="color:black;">
-                                </div>
-                                <br>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <label class="mdl-textfield__label" for="senha">Password:</label>
-                                    <input class="mdl-textfield__input" id="senha" type="password" style="color:black;">
-                                </div>
-                                <br>
-                            </div>
-
-                            <button id="btnLogin" class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised mdl-js-ripple-effect botao_celular botao_desktop">Login</button>
-
-                            <button id="btnLogout" class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised mdl-js-ripple-effect botao_celular botao_desktop">Logout</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="busca">
-                    <div class="mdl-grid" style="text-align:center;">
-                        <div class="mdl-cell mdl-cell--12-col">
-                            <h6>Search Registration</h6>
-                            
-                            <span class="tituloBusca">Enter the search criteria :</span>
-                            <br>
-                            <label class="mdl-radio mdl-js-radio" for="chkName" style="margin-left:30%;">
-                                <input type="radio" name="opcao" id="chkName" class="mdl-radio__button" checked>
-                                <span class="mdl-radio__label">For Name</span>
-                            </label>
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="chkCode">
-                                <input type="radio" id="chkCode" name="opcao" class="mdl-radio__button">
-                                <span class="mdl-radio__label">For Code</span>
-                            </label>
-                            <br>
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-right:18%;">
-                                <label class="mdl-textfield__label" for="dado">Data for search:</label>
-                                <input class="mdl-textfield__input" type="text" id="dado" style="color:black;">
-                            </div>
-                            <br>
-                            <button id="btnBuscar" class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised mdl-js-ripple-effect botao_celular botao_desktop">Search</button>
-                            <br>
-                            <br>
-                            <div id="divResultado">
-                                <table class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp tabela_celular" id="tableSearch">
-                                    <thead>
-                                        <tr>
-                                            <th>CODE</th>
-                                            <th class="mdl-data-table__cell--non-numeric">NAME</th>
-                                            <th class="mdl-data-table__cell--non-numeric ocultar_celular">EMAIL</th>
-                                            <th class="ocultar_celular">SALARY</th>
-                                            <th class="mdl-data-table__cell--non-numeric ocultar_celular">DATE BIRTH</th>
-                                            <th class="mdl-data-table__cell--non-numeric ocultar_celular">GENRE</th>
-                                            <th class="mdl-data-table__cell--non-numeric">EDIT</th>
-                                            <th class="mdl-data-table__cell--non-numeric">DELETE</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-            </main>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li><a href="#home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                  <li><a href="#cadastro"><span class="glyphicon glyphicon-edit"></span> Registration</a></li>
+                  <li><a href="#busca"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#login"><span class="glyphicon glyphicon-log-in"></span><span id="lnkLogin"></span></a></li>
+               </ul>
             </div>
-        </div>
-</body>
+         </div>
+      </nav>
+      <div id="token" class="divToken"></div>
+      <div class="wrapper" role="main">
+         <div id="cadastro" class="container">
+            <h1 class="color2">Registration</h1>
+            <input type="hidden" id="codigoEdicao">
+            <div class="row">
+               <div class="col-md-7">
+                  <div role="form">
+                     <div class="form-group" id="divErrors">
+                        <div class="divErrors">
+                           <ul id="listError"></ul>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label for="nome" class="control-label">Name</label>
+                        <input type="text" class="form-control" id="nome" required>
+                     </div>
+                     <div class="form-group">
+                        <label for="email" class="control-label">E-mail</label>
+                        <input type="text" id="email" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                     </div>
+                     <div class="form-group">
+                        <label for="renda" class="control-label">Salary</label>
+                        <input type="number" id="renda" class="form-control"  pattern="[0-9]" required>
+                     </div>
+                     <div class="form-group">
+                        <label for="renda" class="control-label">Date Of Birth</label>
+                        <input type='text' data-provide="datepicker" readonly="readonly" class="form-control" data-date-format="dd/mm/yyyy" id="dataNasc" required />
+                     </div>
+                     <div class="form-group">
+                        <label for="sexo" class="control-label">Genre</label>
+                        <select required value="" id="sexo" class="form-control"  required>
+                           <option value="M">Male</option>
+                           <option value="F">Female</option>
+                        </select>
+                     </div>
+                     <div class="form-group">
+                        <button type="button" id="btnDelConfirm" class="col-md-2 btn btn-danger" data-toggle="modal" data-target="#confirmDelete">Delete</button>
+                        <button id="btnClr" class="col-md-2 btn">Clear</button>
+                        <button type="button" id="btnEditConfirm" class="col-md-2 btn btn-warning" data-toggle="modal" data-target="#confirmEdition">Edit</button>
+                        <button id="btnIst" class="col-md-2 btn btn-success">Insert</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="wrapper" role="main">
+         <div id="home" class="container">
+            <h1 class="color2">Home</h1>
+            <hr>
+            <div class="row col-md-12">
+               <p class="textHome">Prototype of a Physical Person registration system that shows the jQuery's use (client-side), with PHP(server-side) and SQLite database. 
+                  Front-end using the framework BootStrap.
+               </p>
+            </div>
+            <div class="row col-md-12">
+               <div class="col-md-offset-9">
+                  <img class="logoJ" src="img/logoj.png">
+               </div>
+            </div>
+            <div class="row col-md-12">
+               <div class="col-md-offset-9">
+                  <img class="offset-md-1 logoP" src="img/logop.png">
+                  <img class="offset-md-1 logoS" src="img/logos.png">
+                  <img class="offset-md-1 logoB" src="img/logob.png">
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="wrapper" role="main">
+         <div id="login" class="container">
+            <h3 class="color2">Login</h3>
+            <div class="row">
+               <div id="divfrmlogin">
+                  <div class="form-group">
+                     <div class="form-group" id="divMessage">
+                        <div class="divMessage">
+                           <ul id="listMessage"></ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div role="form">
+                        <div class="form-group">
+                           <label for="usuario" class="control-label">User</label>
+                           <input id="usuario" type="text" class="form-control" value="admin" required>
+                        </div>
+                        <div class="form-group">
+                           <label for="senha" class="control-label">Password</label>
+                           <input id="senha" type="password" class="form-control" value="121181" required>
+                        </div>
+                        <div class="form-group">
+                           <button id="btnLogin" class="col-md-7 btn btn-success">Login</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="wrapper" role="main">
+         <div id="busca" class="container">
+            <h1 class="color2">Search</h1>
+            <h3>Enter the search criteria</h3>
+            <div class="radio">
+               <label><input type="radio" name="opcao" id="chkName" checked><b>FOR NAME</b></label>
+            </div>
+            <div class="radio">
+               <label><input type="radio" id="chkCode" name="opcao"><b>FOR ID</b></label>
+            </div>
+            <div class="form-group">
+               <label for="dado" class="control-label">Data for search</label>
+            </div>
+            <div class="form-group">
+               <div>
+                  <div class="row col-md-3">
+                     <input type="text" id="dado" class="form-control" required>
+                  </div>
+                  <button id="btnBuscar" class="btn btn-primary">Search</button>
+               </div>
+            </div>
+            <div id="divResultado">
+               <div class="form-group">
+                  <h4>Filter by name</h4>
+                  <div class="row col-md-3">
+                     <input type="text" id="filtroNome" name="filtroNome" class="form-control" required>
+                  </div>
+               </div>
+               <table id="tableSearch" class="footable" data-page-size="6" data-first-text="FIRST" data-next-text="NEXT" data-previous-text="PREVIOUS" data-last-text="LAST">
+                  <thead>
+                     <tr>
+                        <th>CODE</th>
+                        <th>NAME</th>
+                        <th class="visible-sm">EMAIL</th>
+                        <th class="visible-sm">SALARY</th>
+                        <th class="visible-sm">DATE BIRTH</th>
+                        <th class="visible-sm">GENRE</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                  <tfoot>
+                     <td colspan='5'>
+                        <div class='pagination'></div>
+                     </td>
+                  </tfoot>
+               </table>
+            </div>
+         </div>
+      </div>
 
+      
+      <!-- Modal -->
+      <div id="info" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title" id="titleModal"></h4>
+            </div>
+            <div class="modal-body">
+              <p id="textModal"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="confirmLogout" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title" id="titleModal">Question</h4>
+            </div>
+            <div class="modal-body">
+              <p id="textModal">Do you want close this session?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal">No</button> 
+              <button type="button" class="btn btn-primary" id="btnLogout" data-dismiss="modal">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="confirmDelete" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title" id="titleModal">Question</h4>
+            </div>
+            <div class="modal-body">
+              <p id="textModal">Do you want delete this Physical Person?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal">No</button> 
+              <button id="btnDel" class="btn btn-danger" data-dismiss="modal">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="confirmEdition" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title" id="titleModal">Question</h4>
+            </div>
+            <div class="modal-body">
+              <p id="textModal">Do you want edit this Physical Person?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn" data-dismiss="modal">No</button> 
+              <button id="btnEdt" class="btn btn-warning" data-dismiss="modal">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript">   
+          j('#dataNasc').datepicker({ dateFormat: 'dd/mm/yy' });
+      </script>
+   </body>
 </html>

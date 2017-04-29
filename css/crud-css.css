@@ -1,0 +1,70 @@
+#lnkLogin{
+padding-left:5px;
+}
+.divToken{
+visibility: hidden;
+}
+
+.imgTab{
+height:20px;
+}
+
+.divErrors{
+color:red;
+border:3px solid red;
+background-color:#CED4AE;
+border-radius: 5px;
+}
+
+.divMessage{
+color:white;
+border:3px solid white;
+background-color:red;
+border-radius: 5px;
+}
+
+body{
+	background-image: url("../img/back.png");
+}
+
+.textHome{
+	color:#7acef4;
+	font-size:20px;
+	font-family:"Trebuchet MS";
+}
+
+.logoB{
+	width:50px;
+}
+
+.logoJ{
+	width:300px;
+}
+
+.logoP{
+	width:100px;
+}
+
+.logoS{
+	width:100px;
+	border-radius: 10px;
+}
+
+label{
+	color:#7acef4;
+	font-weight:bold;
+}
+
+.color2{
+	color:#D18F4F;
+}
+
+.modal-content {
+  background-image:url("../img/back2.png");
+
+}
+
+.modal-body {
+  background-image:url("../img/back2.png");
+  color:white;
+}

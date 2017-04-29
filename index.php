@@ -16,6 +16,7 @@
       <script type="text/javascript" src="datepicker/js/bootstrap-datepicker.js"></script>
       <script src="datepicker/locales/bootstrap-datepicker.pt-BR.min.js" type="text/javascript" charset="utf-8" async defer></script>
       <link href="css/crud-css.css" rel="stylesheet" />
+      <link rel="shortcut icon" href="img/jquery.ico" type="image/x-icon" />
       <title>Registration jQuery</title>
    </head>
    <body>
@@ -41,61 +42,16 @@
             </div>
          </div>
       </nav>
-      <div id="token" class="divToken"></div>
-      <div class="wrapper" role="main">
-         <div id="cadastro" class="container">
-            <h1 class="color2">Registration</h1>
-            <input type="hidden" id="codigoEdicao">
-            <div class="row">
-               <div class="col-md-7">
-                  <div role="form">
-                     <div class="form-group" id="divErrors">
-                        <div class="divErrors">
-                           <ul id="listError"></ul>
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <label for="nome" class="control-label">Name</label>
-                        <input type="text" class="form-control" id="nome" required>
-                     </div>
-                     <div class="form-group">
-                        <label for="email" class="control-label">E-mail</label>
-                        <input type="text" id="email" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-                     </div>
-                     <div class="form-group">
-                        <label for="renda" class="control-label">Salary</label>
-                        <input type="number" id="renda" class="form-control"  pattern="[0-9]" required>
-                     </div>
-                     <div class="form-group">
-                        <label for="renda" class="control-label">Date Of Birth</label>
-                        <input type='text' data-provide="datepicker" readonly="readonly" class="form-control" data-date-format="dd/mm/yyyy" id="dataNasc" required />
-                     </div>
-                     <div class="form-group">
-                        <label for="sexo" class="control-label">Genre</label>
-                        <select required value="" id="sexo" class="form-control"  required>
-                           <option value="M">Male</option>
-                           <option value="F">Female</option>
-                        </select>
-                     </div>
-                     <div class="form-group">
-                        <button type="button" id="btnDelConfirm" class="col-md-2 btn btn-danger" data-toggle="modal" data-target="#confirmDelete">Delete</button>
-                        <button id="btnClr" class="col-md-2 btn">Clear</button>
-                        <button type="button" id="btnEditConfirm" class="col-md-2 btn btn-warning" data-toggle="modal" data-target="#confirmEdition">Edit</button>
-                        <button id="btnIst" class="col-md-2 btn btn-success">Insert</button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="wrapper" role="main">
-         <div id="home" class="container">
+
+
+      <div id="home" class="container">
             <h1 class="color2">Home</h1>
             <hr>
-            <div class="row col-md-12">
-               <p class="textHome">Prototype of a Physical Person registration system that shows the jQuery's use (client-side), with PHP(server-side) and SQLite database. 
-                  Front-end using the framework BootStrap.
-               </p>
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-3">CrudJQuery</h1>
+                <p class="lead">Prototype of a Physical Person registration system that shows the jQuery's use (client-side), with PHP(server-side) and SQLite database. Front-end using the framework BootStrap.</p>
+              </div>
             </div>
             <div class="row col-md-12">
                <div class="col-md-offset-9">
@@ -109,10 +65,55 @@
                   <img class="offset-md-1 logoB" src="img/logob.png">
                </div>
             </div>
-         </div>
       </div>
-      <div class="wrapper" role="main">
-         <div id="login" class="container">
+
+      <div id="cadastro" class="container">
+         <h1 class="color2">Registration</h1> 
+            <div id="divFrmCadastro">
+                <div class="form-group">
+                  <input type="hidden" class="form-control" id="token" readonly required>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="codigoEdicao" readonly required>
+                </div>
+                <div class="form-group divErrors" id="divErrors">
+                    <ul id="listError"></ul>
+                </div> 
+                <div class="form-group">
+                    <label for="nome" class="control-label">Name</label>
+                    <input type="text" class="form-control" id="nome" required>
+                 </div>
+                 <div class="form-group">
+                    <label for="email" class="control-label">E-mail</label>
+                    <input type="text" id="email" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                 </div>
+                 <div class="form-group">
+                    <label for="renda" class="control-label">Salary</label>
+                    <input type="number" id="renda" class="form-control"  pattern="[0-9]" required>
+                 </div>
+                 <div class="form-group">
+                    <label for="dataNasc" class="control-label">Date Of Birth</label>
+                    <input type='text' data-provide="datepicker" readonly="readonly" class="form-control" data-date-format="dd/mm/yyyy" id="dataNasc" required />
+                 </div>
+                 <div class="form-group">
+                    <label for="sexo" class="control-label">Genre</label>
+                    <select required value="" id="sexo" class="form-control"  required>
+                       <option value="M">Male</option>
+                       <option value="F">Female</option>
+                    </select>
+                 </div>
+                 <div class="form-group">
+                    <button type="button" id="btnDelConfirm" class="col-md-2 btn btn-danger" data-toggle="modal" data-target="#confirmDelete">Delete</button>
+                    <button id="btnClr" class="col-md-2 btn">Clear</button>
+                    <button type="button" id="btnEditConfirm" class="col-md-2 btn btn-warning" data-toggle="modal" data-target="#confirmEdition">Edit</button>
+                    <button id="btnIst" class="col-md-2 btn btn-success">Insert</button>
+                 </div>
+             
+            </div>
+      </div>
+      
+
+        <div id="login" class="container">
             <h3 class="color2">Login</h3>
             <div class="row">
                <div id="divfrmlogin">
@@ -141,8 +142,8 @@
                </div>
             </div>
          </div>
-      </div>
-      <div class="wrapper" role="main">
+      
+
          <div id="busca" class="container">
             <h1 class="color2">Search</h1>
             <h3>Enter the search criteria</h3>
@@ -193,14 +194,11 @@
                </table>
             </div>
          </div>
-      </div>
 
       
-      <!-- Modal -->
       <div id="info" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content modal-sm">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title" id="titleModal"></h4>
@@ -217,8 +215,7 @@
 
       <div id="confirmLogout" class="modal fade" role="dialog">
         <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
+          <div class="modal-content modal-sm">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title" id="titleModal">Question</h4>
@@ -237,8 +234,7 @@
 
       <div id="confirmDelete" class="modal fade" role="dialog">
         <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
+          <div class="modal-content modal-sm">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title" id="titleModal">Question</h4>
@@ -256,7 +252,6 @@
 
       <div id="confirmEdition" class="modal fade" role="dialog">
         <div class="modal-dialog">
-          <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -276,5 +271,7 @@
       <script type="text/javascript">   
           j('#dataNasc').datepicker({ dateFormat: 'dd/mm/yy' });
       </script>
+
+     
    </body>
 </html>

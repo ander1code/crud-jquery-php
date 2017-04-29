@@ -2,7 +2,7 @@ var j = $.noConflict();
 j(document).ready(function () {
          function TokenGen() {
             j.post('token.php', function (data) {
-               j("#token").text(data);
+               j("#token").val(data);
             });
          }
          TestSession();
@@ -80,9 +80,11 @@ j(document).ready(function () {
          function OpenRegistration() {
             TestSession();
             if (status_session == 1) {
+               j("#divFrmCadastro").hide();
                j('#divErrors').hide();
                j("#home").hide();
                j("#cadastro").show();
+               j("#divFrmCadastro").show();
                j("#busca").hide();
                j("#login").hide();
                if (status_edition == 0) {
@@ -119,7 +121,7 @@ j(document).ready(function () {
             j("#busca").hide();
             j("#login").show();
             if (status_session == 0) {
-            	 j("#divfrmlogin").hide();
+            	j("#divfrmlogin").hide();
                j("#btnLogin").hide();
                j("#divfrmlogin").fadeIn("slow");
                j("#btnLogin").fadeIn("slow");
@@ -133,7 +135,7 @@ j(document).ready(function () {
             j('#divMessage').hide();
             var login = j("#usuario").val();
             var senha = j("#senha").val();
-            var token = j("#token").text();
+            var token = j("#token").val();
             var param = JSON.stringify({
                opcao: 6,
                login: login.trim(),
@@ -177,7 +179,7 @@ j(document).ready(function () {
              j('#btnEditConfirm').attr("disabled", "disabled");
              j('#btnDelConfirm').attr("disabled", "disabled");
              var code = j('#codigoEdicao').val();
-             var token = j('#token').text();
+             var token = j('#token').val();
              var param = JSON.stringify({
                 opcao: 3,
                 codigo: code,
@@ -195,7 +197,7 @@ j(document).ready(function () {
          function Delete(code) {
                j('#lnkEdit').attr("disabled", "disabled");
                j('#lnkDel').attr("disabled", "disabled");
-               var token = j('#token').text();
+               var token = j('#token').val();
                var param = JSON.stringify({
                   opcao: 3,
                   codigo: code,
@@ -220,7 +222,7 @@ j(document).ready(function () {
                var salary = j('#renda').val();
                var dateBirth = j('#dataNasc').val();
                var genre = j('#sexo').val();
-               var token = j('#token').text();
+               var token = j('#token').val();
                var param = JSON.stringify({
                   opcao: 2,
                   codigo: code,
@@ -253,7 +255,7 @@ j(document).ready(function () {
                var salary = j('#renda').val();
                var dateBirth = j('#dataNasc').val();
                var genre = j('#sexo').val();
-               var token = j('#token').text();
+               var token = j('#token').val();
                var param = JSON.stringify({
                   opcao: 1,
                   nome: name,
@@ -281,7 +283,7 @@ j(document).ready(function () {
          function GetPhysicalPersonForName() {
             j('#tableSearch > tbody').empty();
             //j('#btnBuscar').attr("disabled", "disabled");
-            var token = j('#token').text();
+            var token = j('#token').val();
             var dataSearch = j('#dado').val();
             if (dataSearch == "") {
                dataSearch = "%";
@@ -332,7 +334,7 @@ j(document).ready(function () {
                j('#tableSearch > tbody').empty();
                //j('#btnBuscar').attr("disabled", "disabled");
                try {
-                  var token = j('#token').text();
+                  var token = j('#token').val();
                   var dataSearch = j('#dado').val();
                   parseInt(dataSearch);
                   if (dataSearch != "") {

@@ -306,7 +306,7 @@ j(document).ready(function () {
                      j.each(data, function (key, value) {
                            console.log(value.DATANASC);
                            j("#divResultado").show();
-                           j('tbody').append("<tr><td>"+value.CODIGO+"</td><td>"+value.NOME+"</td><td class='visible-sm'>"+value.EMAIL+"</td><td class='visible-sm'>"+value.RENDA+"</td><td class='visible-sm'>"+value.DATANASC+"</td><td class='visible-sm'>"+value.SEXO+"</td><td><a href='#cadastro'><img src='img/edit.ico' class='imgTab' id='lnkEdit'></a></td><td><a href='#busca'><img src='img/delete.ico' class='imgTab' id='lnkDel'></a></td></tr>");
+                           j('tbody').append("<tr><td>"+value.CODIGO+"</td><td>"+value.NOME+"</td><td class='visible-sm'>"+value.EMAIL+"</td><td class='visible-sm'>"+value.RENDA+"</td><td class='visible-sm'>"+value.DATANASC+"</td><td class='visible-sm'>"+value.SEXO+"</td><td><a href='#cadastro'><img src='img/select.png' class='imgAction' id='lnkEdit'></a></td></tr>");
                               j("tbody > tr").bind("mouseover", function () {
                                  code = j(this).find("td:eq(0)").text();
                                  name = j(this).find("td:eq(1)").text();

@@ -70,45 +70,46 @@
       <div id="cadastro" class="container">
          <h1 class="color2">Registration</h1> 
             <div id="divFrmCadastro">
-                <div class="form-group">
-                  <input type="hidden" class="form-control" id="token" readonly required>
-                </div>
-                <div class="form-group">
-                    <input type="hidden" class="form-control" id="codigoEdicao" readonly required>
-                </div>
-                <div class="form-group divErrors" id="divErrors">
-                    <ul id="listError"></ul>
-                </div> 
-                <div class="form-group">
-                    <label for="nome" class="control-label">Name</label>
-                    <input type="text" class="form-control" id="nome" required>
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <input type="hidden" class="form-control" id="token" readonly required>
+                  </div>
+                  <div class="form-group">
+                      <input type="hidden" class="form-control" id="codigoEdicao" readonly required>
+                  </div>
+                  <div class="form-group divErrors" id="divErrors">
+                      <ul id="listError"></ul>
+                  </div> 
+                  <div class="form-group">
+                      <label for="nome" class="control-label">Name</label>
+                      <input type="text" class="form-control" id="nome" required>
+                   </div>
+                   <div class="form-group">
+                      <label for="email" class="control-label">E-mail</label>
+                      <input type="text" id="email" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                   </div>
+                   <div class="form-group">
+                      <label for="renda" class="control-label">Salary</label>
+                      <input type="number" id="renda" class="form-control"  pattern="[0-9]" required>
+                   </div>
+                   <div class="form-group">
+                      <label for="dataNasc" class="control-label">Date Of Birth</label>
+                      <input type='text' data-provide="datepicker" readonly="readonly" class="form-control" data-date-format="dd/mm/yyyy" id="dataNasc" required />
+                   </div>
+                   <div class="form-group">
+                      <label for="sexo" class="control-label">Genre</label>
+                      <select required value="" id="sexo" class="form-control"  required>
+                         <option value="M">Male</option>
+                         <option value="F">Female</option>
+                      </select>
+                   </div>
+                   <div class="form-group">
+                      <button type="button" id="btnDelConfirm" class="col-md-2 btn btn-danger" data-toggle="modal" data-target="#confirmDelete">Delete</button>
+                      <button id="btnClr" class="col-md-2 btn">Clear</button>
+                      <button type="button" id="btnEditConfirm" class="col-md-2 btn btn-warning" data-toggle="modal" data-target="#confirmEdition">Edit</button>
+                      <button id="btnIst" class="col-md-2 btn btn-success">Insert</button>
+                   </div>
                  </div>
-                 <div class="form-group">
-                    <label for="email" class="control-label">E-mail</label>
-                    <input type="text" id="email" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
-                 </div>
-                 <div class="form-group">
-                    <label for="renda" class="control-label">Salary</label>
-                    <input type="number" id="renda" class="form-control"  pattern="[0-9]" required>
-                 </div>
-                 <div class="form-group">
-                    <label for="dataNasc" class="control-label">Date Of Birth</label>
-                    <input type='text' data-provide="datepicker" readonly="readonly" class="form-control" data-date-format="dd/mm/yyyy" id="dataNasc" required />
-                 </div>
-                 <div class="form-group">
-                    <label for="sexo" class="control-label">Genre</label>
-                    <select required value="" id="sexo" class="form-control"  required>
-                       <option value="M">Male</option>
-                       <option value="F">Female</option>
-                    </select>
-                 </div>
-                 <div class="form-group">
-                    <button type="button" id="btnDelConfirm" class="col-md-2 btn btn-danger" data-toggle="modal" data-target="#confirmDelete">Delete</button>
-                    <button id="btnClr" class="col-md-2 btn">Clear</button>
-                    <button type="button" id="btnEditConfirm" class="col-md-2 btn btn-warning" data-toggle="modal" data-target="#confirmEdition">Edit</button>
-                    <button id="btnIst" class="col-md-2 btn btn-success">Insert</button>
-                 </div>
-             
             </div>
       </div>
       
@@ -180,8 +181,7 @@
                         <th class="visible-sm">SALARY</th>
                         <th class="visible-sm">DATE BIRTH</th>
                         <th class="visible-sm">GENRE</th>
-                        <th>EDIT</th>
-                        <th>DELETE</th>
+                        <th>SELECT</th>
                      </tr>
                   </thead>
                   <tbody>

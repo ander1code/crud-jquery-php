@@ -2,7 +2,7 @@
 
 1 - Description:
 
-- Prototype of a CRUD web made in jQuery and Bootstrap, and Server Side, PHP with SQLite 3. 
+- Prototype of a CRUD web made in jQuery and Bootstrap in client side, and PHP with SQLite 3 in server side.
 
 2 - Features CRUD:
 
@@ -17,13 +17,13 @@
 - Cross Site Scripting Protection 
 - CSRF Protection 
 
-4 - Tools developments: 
+4 - Tools: 
 
 - 4.1 - Client Side: 
   - jQuery 
-  - Bootstrap. 
+  - Bootstrap 3.3.7 
 
-- 4.2 - Server side: 
-  - PHP
-  - SQLite. 
+- 4.2 - Server Side: 
+  - PHP 5.0
+  - SQLite 3 
   - PDO (For PHP connection).

@@ -1,29 +1,38 @@
-# CRUD-jquery
+# CRUD-jQuery-PHP  
+![Programming Language](https://img.shields.io/badge/PHP-lavender?style=flat&logo=php&logoColor=white) ![Programming Language](https://img.shields.io/badge/JavaScript-yellow?style=flat&logo=javascript&logoColor=white)  
+![Framework](https://img.shields.io/badge/jQuery-blue?style=flat&logo=jquery&logoColor=white) ![Framework](https://img.shields.io/badge/Bootstrap-purple?style=flat&logo=bootstrap&logoColor=white)  
+![Database](https://img.shields.io/badge/SQLite-blue?logo=sqlite&logoColor=white)  ![PDO](https://img.shields.io/badge/PDO-777BB4?&logo=php&logoColor=white)
+![Platform: Web](https://img.shields.io/badge/Platform-Web-blue?logo=google-chrome)
+![Last Commit](https://img.shields.io/github/last-commit/ander1code/crud-jquery-php?color=yellow&logo=github) ![Size](https://img.shields.io/github/repo-size/ander1code/crud-jquery-php?color=blue&logo=files) ![License](https://img.shields.io/github/license/ander1code/crud-jquery-php?color=black&logo=open-source-initiative)
 
-1 - Description:
+---
 
-- Prototype of a CRUD web made in jQuery and Bootstrap in client side, and PHP with SQLite 3 in server side with security features.
+## 1. Description
+A **web-based CRUD application prototype** built with **jQuery** and **Bootstrap** on the client side, and **PHP** with **SQLite3** on the server side. The project includes robust security features to ensure secure data handling and user authentication.
 
-2 - Features CRUD:
+## 2. Features
+- **Login System:** Secured using sessions and **MD5 hashing**.
+- **Token-Based Security:** Implements **SHA512 tokens** for enhanced data protection.
+- **Registration Form:** Allows users to register data efficiently.
+- **Search Functionality:** Enables data searches by name and code for streamlined access.
 
-- Login with Session (MD5)
-- Token (sha512)
-- Registration's Form
-- Search for Name and Code 
+## 3. Security Features
+The application incorporates the following security measures:
+- **SQL Injection Protection:** Prevents unauthorized manipulation of SQL queries.
+- **PHP Injection Protection:** Safeguards against malicious PHP code execution.
+- **Cross-Site Scripting (XSS) Protection:** Protects against script-based attacks targeting users.
+- **CSRF Protection:** Ensures security against Cross-Site Request Forgery attacks.
 
-3 - Security Features:
-- SQL Injection protection
-- PHP Injection Protection 
-- Cross Site Scripting Protection 
-- CSRF Protection 
+## 4. Tools and Technologies Used
 
-4 - Tools: 
+### 4.1. Client Side
+- **jQuery:** Used for dynamic client-side interactivity.
+- **Bootstrap 3.3.7:** Provides responsive design and styling.
 
-- 4.1 - Client Side: 
-  - jQuery 
-  - Bootstrap 3.3.7 
+### 4.2. Server Side
+- **PHP:** Version 5.0 for backend logic and API implementation.
+- **SQLite3:** Lightweight database for data storage.
+- **PDO (PHP Data Objects):** Ensures secure and efficient database connection.
 
-- 4.2 - Server Side: 
-  - PHP 5.0
-  - SQLite 3 
-  - PDO (For PHP connection).
+---
+
